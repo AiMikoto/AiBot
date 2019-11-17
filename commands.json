@@ -1,0 +1,14 @@
+{
+	"hello": {
+		"action": "says hello to the user",
+		"short": "h",
+		"usage": ""
+	},
+
+	"clear_channel": {
+		"action": "deletes messages from a channel",
+		"usage": {
+			"no-paramater": "deletes the"
+		}
+	}
+}
