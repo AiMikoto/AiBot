@@ -1,6 +1,8 @@
 import discord
+import os
 from discord.ext import commands
 import AiCommands as ai_cmd
+from dotenv import load_dotenv
 
 class Runner:
     def __init__(self):
@@ -10,8 +12,9 @@ class Runner:
         self.on_bot_ready()
 
     def read_token(self):
-        with open("token.txt", "r") as token_file:
-            return token_file.readlines()[0].strip()
+        load_dotenv()
+        token = os.getenv('token')
+        return token
 
     def add_commands(self):
         self.client.remove_command('help')
