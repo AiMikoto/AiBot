@@ -4,7 +4,7 @@ import AiCommands as ai_cmd
 
 class Runner:
     def __init__(self):
-        self.token = 'NjQwNzAyODExMTU5NjU4NTA4.XdHL2g.p4ivpDDXYNxfqJ2jN6GqwKMOHlQ'
+        self.token = 'NjQwNzAyODExMTU5NjU4NTA4.XdHOJA.cn7S7ExGctweZg06MzLPnDf-rXY'
         self.client = commands.Bot(command_prefix = 'ai!')
         self.add_commands()
         self.on_bot_ready()
