@@ -4,10 +4,14 @@ import AiCommands as ai_cmd
 
 class Runner:
     def __init__(self):
-        self.token = 'NjQwNzAyODExMTU5NjU4NTA4.XdHTGw.kc6-WT-ZfT1goQQ4i3uWAb7yliY'
+        self.token = self.read_token()
         self.client = commands.Bot(command_prefix = 'ai!')
         self.add_commands()
         self.on_bot_ready()
+
+    def read_token(self):
+        with open("token.txt", "r") as token_file:
+            return token_file.readlines()[0].strip()
 
     def add_commands(self):
         self.client.remove_command('help')
