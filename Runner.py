@@ -1,5 +1,6 @@
 import discord
 import os
+import sys
 from discord.ext import commands
 import AiCommands as ai_cmd
 from dotenv import load_dotenv
@@ -15,6 +16,7 @@ class Runner:
         load_dotenv()
         token = os.getenv('token')
         print(token)
+        sys.stdout.flush()
         return token
 
     def add_commands(self):
@@ -45,6 +47,7 @@ class Runner:
             print('Logged in as: {0.user}'.format(self.client))
             #print(client.guilds)
             print('------')
+            sys.stdout.flush()
 
     def run(self): self.client.run(self.token)
 
