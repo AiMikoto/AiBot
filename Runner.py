@@ -14,6 +14,7 @@ class Runner:
     def read_token(self):
         load_dotenv()
         token = os.getenv('token')
+        print(token)
         return token
 
     def add_commands(self):
