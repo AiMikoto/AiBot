@@ -15,7 +15,7 @@ class Runner:
     def read_token(self):
         load_dotenv()
         token = os.getenv('token')
-        print(token)
+        sys.stdout.write(token + '\n')
         sys.stdout.flush()
         return token
 
