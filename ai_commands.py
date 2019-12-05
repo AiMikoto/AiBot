@@ -2,13 +2,14 @@ import ai_utils as aiu
 from operator import attrgetter
 from discord import utils
 import asyncio
+import io
 
 async def help(context, potential_command):
     commands = aiu.read_json('commands.json')
     message = ''
     if not potential_command:
         for i in commands:
-            message += i + ": " + commands[i]["simple"] + "; alias: " + commands[i]["alias"] + "\r\n"
+            message += i + ": " + commands[i]["simple"] + "; alias: " + commands[i]["alias"] + "\n"
         await context.send(message)
 
 async def hello(context):
@@ -49,7 +50,7 @@ async def post_schedule_for_day(context, details, scheduler, day, isTest = False
     await channel.send(instructions)
     await channel.send(message)
     await post_raids_for_day(channel, scheduler, day, isTest)
-      
+    await channel.send("<@&553023665122312222> <@&616384226555723779>")
 
 async def post_raids_for_day(context, scheduler, day, isTest = False):
     raids = scheduler.get_raids(day)
