@@ -1,14 +1,18 @@
 {
-	"hello": {
-		"action": "says hello to the user",
-		"short": "h",
-		"usage": ""
-	},
-
-	"clear_channel": {
-		"action": "deletes messages from a channel",
-		"usage": {
-			"no-paramater": "deletes the"
-		}
-	}
+  "hello": {
+    "simple": "says hello to the user",
+    "alias": "h",
+    "details": {
+      "1": "it just says hi..."
+    }
+  },
+  "post_schedule": {
+    "simple": "posts the schedule",
+    "alias": "ps, sched",
+    "details": {
+      "1": "-d [day]\n   posts the raids for the respective day on the default channel",
+      "2": "-u\n   updates the current posted schedule with the new one",
+      "3": "-cc [channel_name]\n   changes the default channel to post the schedule to"
+    }
+  }
 }

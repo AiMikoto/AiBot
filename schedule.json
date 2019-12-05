@@ -1,85 +1,92 @@
 {
-	"Friday":
-	{
-		"1": {
-			"Hour": "17:00",
-			"Name": "Bjorn",
-			"Reactions": "classic"
-		},
-		"2": {
-			"Name":"Lukarax",
-			"Hour":"17:40",
-			"Reactions":"classic"
-		},
-		"3": {
-			"Name":"Pink Bean",
-			"Hour":"18:20",
-			"Reactions":"classic"
-		},
-		"4": {
-			"Name":"Guild Raid",
-			"Hour":"19:00",
-			"Reactions":"guild"
-		}
-	},
-	"Saturday":
-	{
-		"1": {
-			"Name":"Bjorn",
-			"Hour":"13:00",
-			"Reactions":"classic"
-		},
-		"2": {
-			"Name":"Lukarax",
-			"Hour":"13:40",
-			"Reactions":"classic"
-		},
-		"3": {
-			"Name":"Pink Bean",
-			"Hour":"14:20",
-			"Reactions":"classic"
-		},
-		"4": {
-			"Name":"Guild Raid",
-			"Hour":"15:00",
-			"Reactions":"guild"
-		},
-		"5": {
-			"Name":"Guild Dance Dance",
-			"Hour":"17:00",
-			"Reactions":"dance"
-		}
-	},
-	"Sunday":
-	{
-		"1": {
-			"Name":"Bjorn",
-			"Hour":"13:00",
-			"Reactions":"classic"
-		},
-		"2": {
-			"Name":"Lukarax",
-			"Hour":"13:40",
-			"Reactions":"classic"
-		},
-		"3": {
-			"Name":"Pink Bean",
-			"Hour":"14:20",
-			"Reactions":"classic"
-		},
-		"4": {
-			"Name":"Guild Raid",
-			"Hour":"15:00",
-			"Reactions":"guild"
-		}
-	},
+  "Friday": {
+    "1": {
+      "Hour": "17:00",
+      "Name": "3x3 60's",
+      "Reactions": "60s"
+    },
+    "2": {
+      "Hour": "18:30",
+      "Name": "3x3 50's",
+      "Reactions": "50s"
+    },
+    "3": {
+      "Name": "Guild Raid",
+      "Hour": "19:00",
+      "Reactions": "guild"
+    },
+    "4": {
+      "Name": "Blackshard Nexus",
+      "Hour": "20:00",
+      "Reactions": "bsn"
+    }
+  },
+  "Saturday": {
+    "1": {
+      "Hour": "13:00",
+      "Name": "3x3 60's",
+      "Reactions": "60s"
+    },
+    "2": {
+      "Hour": "14:30",
+      "Name": "3x3 50's",
+      "Reactions": "50s"
+    },
+    "3": {
+      "Name": "Guild Raid",
+      "Hour": "15:00",
+      "Reactions": "guild"
+    },
+    "4": {
+      "Name": "World Boss Train",
+      "Hour": "16:00",
+      "Reactions": "wbt"
+    },
+    "5": {
+      "Name": "Guild Dance Dance",
+      "Hour": "17:00",
+      "Reactions": "dance"
+    },
+    "6": {
+      "Name": "Blackshard Nexus",
+      "Hour": "19:00",
+      "Reactions": "bsn"
+    }
+  },
+  "Sunday": {
+    "1": {
+      "Hour": "13:00",
+      "Name": "3x3 60's",
+      "Reactions": "60s"
+    },
+    "2": {
+      "Hour": "14:30",
+      "Name": "3x3 50's",
+      "Reactions": "50s"
+    },
+    "3": {
+      "Name": "Guild Raid",
+      "Hour": "15:00",
+      "Reactions": "guild"
+    },
+    "4": {
+      "Name": "World Boss Train",
+      "Hour": "16:00",
+      "Reactions": "wbt"
+    },
+    "5": {
+      "Name": "Blackshard Nexus",
+      "Hour": "17:00",
+      "Reactions": "bsn"
+    }
+  },
 	"Monday":
 	{
-		"1": {
-			"Name":"Guild Raid",
-			"Hour":"19:00",
-			"Reactions":"guild"
-		}
+    "1": {
+      "Name": "Guild Raid",
+      "Hour": "18:00",
+      "Reactions": "guild"
+    }
 	},
 	"Tuesday":
 	{
