@@ -1,18 +1,47 @@
 {
-  "hello": {
-    "simple": "says hello to the user",
+  "help": {
+    "simple": "The help command, use it to find out more about...stuff, I guess?",
     "alias": "h",
+    "requirements": "None",
     "details": {
-      "1": "it just says hi..."
+      "details": "Really, it's just a help command. Why did you feel the need to type that?"
     }
   },
-  "post_schedule": {
-    "simple": "posts the schedule",
-    "alias": "ps, sched",
+  "hello": {
+    "simple": "Says hello to the user.",
+    "alias": "hi",
+    "requirements": "None",
     "details": {
-      "1": "-d [day]\n   posts the raids for the respective day on the default channel",
-      "2": "-u\n   updates the current posted schedule with the new one",
-      "3": "-cc [channel_name]\n   changes the default channel to post the schedule to"
+      "details": "It just says hi..."
+    }
+  },
+  "schedule": {
+    "simple": "Allows to post and edit the schedule",
+    "alias": "s, sched",
+    "requirements": "Admin",
+    "details": {
+      "-d [day]": "Posts the raids for the respective day on the default channel.\n[day] can either be the full name of the day, a 1 or 3 letter abbreviation, or even a digit 1-7 representing the value of the day, starting with Monday.",
+      "-dt [day]": "Posts the raids for the respective day on the default test channel.",
+      "-u": "Updates the current posted schedule with the new one.",
+      "-cc [channel_name]": "Changes the default channel to post the schedule to.\n[channel_name] can either be the actual name of the channel, or you can simply ping it for comfort.",
+      "-cct [channel_name]": "Changes the default test channel to post the schedule to.",
+      "-ch [time]": "Changes the hour at which raids should be automatically posted.\n[hour] can be given simply as a number, for example: \"ai!ps -ch 20\" which will be converted into a time+minute format 20:00.\nOr, it can also be given as an hh:mm format, for example 19:42."
+    }
+  },
+  "info": {
+    "simple": "Displays some info about the bot.",
+    "alias": "i",
+    "requirements": "Admin",
+    "details": {
+      "details": "Displays info about the current version, channels to post to and the hour at which to automatically post raids."
+    }
+  },
+  "poll": {
+    "simple": "Makes a poll",
+    "alias": "p",
+    "requirements": "None",
+    "details": {
+      "details": "[title] [op1...op2...opN] N >=2 and N <= 15"
     }
   }
 }

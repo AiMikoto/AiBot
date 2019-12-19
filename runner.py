@@ -22,7 +22,7 @@ class Runner:
         async def help(context, potential_command = None):
             await ai_cmd.help(context, potential_command)
 
-        @self.client.command(aliases = ['hi'])
+        @self.client.command(aliases = ['hi','owo','uwu'])
         async def hello(context):
             await ai_cmd.hello(context) 
 
@@ -31,10 +31,19 @@ class Runner:
             #channel = a.find_channel(context, name)
             #await ai_cmd.clear_channel(context, channel, deletetype, limit)
 
-        @self.client.command(aliases = ['ps','sched'])
+        @self.client.command(aliases = ['s','sched'])
         @commands.has_any_role("Leadership","The guy in charge")
-        async def post_schedule(context, *details):
-            await ai_cmd.post_schedule(context, details, self.scheduler) 
+        async def schedule(context, *details):
+            await ai_cmd.schedule(context, details, self.scheduler)
+
+        @self.client.command(aliases = ['i'])
+        @commands.has_any_role("Leadership","The guy in charge")
+        async def info(context):
+            await ai_cmd.bot_info(context, self.scheduler)
+
+        @self.client.command(aliases = ['p'])
+        async def poll(context, *details):
+            await ai_cmd.post_poll(context, details)
     
     def on_bot_ready(self):
         @self.client.event

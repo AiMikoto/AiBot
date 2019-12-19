@@ -49,9 +49,11 @@ class RaidScheduler(object):
         self.deleteOnPost = True
         self.active_raids = []
         self.instructions = self.get_instructions()
+        self.raids_post_hour = "21:00"
+        self.raid_schedule_image = "images\\genesis raid schedule.png"
 
     def start_raids_loop(self):
-        @loop(seconds = 1)
+        @loop(seconds = 10)
         async def check_hour():
             now = datetime.now(timezone.utc).strftime('%H:%M:%S').split(':')
             h = int(now[0])
@@ -67,18 +69,20 @@ class RaidScheduler(object):
         return aiu.read_json('schedule.json')
     
     def apply_schedule(self):
-        msg = '```markdown\r\n/* Guild Schedule *\\'+'\r\n'*2
+        msg = ""
         raids = []
         schedule = self.schedule
-        for day in schedule:
-            if len(schedule[day]) > 0:
-                msg += '[' + day + ']()\r\n'
-                for i in schedule[day]:
-                    name, hour, reactions = self.get_raid_info(schedule[day][i])
-                    raids.append(Raid(name, hour, day, reactions))
-                    msg += '<' + hour + ' | ' + name +'>\r\n'
-                msg += '.' * 25 + '\r\n'
-        msg += '\r\n```'
+        if schedule:
+            msg = '```markdown\r\n/* Guild Schedule *\\'+'\r\n'*2
+            for day in schedule:
+                if len(schedule[day]) > 0:
+                    msg += '[' + day + ']()\r\n'
+                    for i in schedule[day]:
+                        name, hour, reactions = self.get_raid_info(schedule[day][i])
+                        raids.append(Raid(name, hour, day, reactions))
+                        msg += '<' + hour + ' | ' + name +'>\r\n'
+                    msg += '.' * 25 + '\r\n'
+            msg += '\r\n```'
         return msg, raids
 
     def get_instructions(self):
