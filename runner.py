@@ -2,6 +2,7 @@ import discord
 import os
 from discord.ext import commands
 import ai_commands as ai_cmd
+import raid_scheduler as rs
 from dotenv import load_dotenv
 
 class Runner:
@@ -34,12 +35,12 @@ class Runner:
         @self.client.command(aliases = ['s','sched'])
         @commands.has_any_role("Leadership","The guy in charge")
         async def schedule(context, *details):
-            await ai_cmd.schedule(context, details, self.scheduler)
+            await ai_cmd.schedule(context, details, self.determine_scheduler(context), self.guilds)
 
         @self.client.command(aliases = ['i'])
         @commands.has_any_role("Leadership","The guy in charge")
         async def info(context):
-            await ai_cmd.bot_info(context, self.scheduler)
+            await ai_cmd.bot_info(context, self.determine_scheduler(context))
 
         @self.client.command(aliases = ['p'])
         async def poll(context, *details):
@@ -50,7 +51,16 @@ class Runner:
         async def on_ready():
             print('Logged in as: {0.user}'.format(self.client))
             print('------')
+            self.add_guilds()
 
     def run(self): self.client.run(self.token)
 
-    def add_scheduler(self, scheduler): self.scheduler = scheduler
+    def add_guilds(self):
+        self.guilds = []
+        for guild in self.client.guilds:
+            self.guilds.append(rs.RaidGuild(guild.id, rs.RaidScheduler(self.client)))
+
+    def determine_scheduler(self, context):
+        for guild in self.guilds:
+            if guild.id == context.guild.id:
+                return guild.scheduler

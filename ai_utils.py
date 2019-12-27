@@ -3,14 +3,28 @@ from datetime import datetime
 from discord import utils
 import ai_hour as aih
 
-version = "0.0.19.1219"
+version = "0.0.19.1227"
 
 genesis_raid_roles_ids = ["<@&553023665122312222>", "<@&616384226555723779>"]
 
-def read_json(json_name):
+def read_json(json_name: str):
     with open(json_name, 'r') as f:
         return json.load(f)
     return None
+
+def write_json(json_name: str, to_write):
+    with open(json_name, 'w') as f:
+        json.dump(to_write, f)
+    return None
+
+def append_to_json(json_name: str, to_append):
+    val = read_json(json_name)
+    val.update(to_append)
+    write_json(json_name, val)
+
+def empty_json(json_name: str):
+    to_write = {}
+    write_json(json_name, to_write)
 
 def array_to_one_string(arr):
     s = ""
@@ -21,7 +35,7 @@ def array_to_one_string(arr):
 def get_author_ping_name(context):
     return "<@" + str(context.message.author.id) + ">"
 
-def find_channel(context, channel):
+def find_channel(context, channel: str):
     if "<" in channel:
         id = channel.split("<#")[1].split(">")[0]
         channel = context.guild.get_channel(int(id))
@@ -103,19 +117,20 @@ def check_if_time_is_valid(time: str):
                 raise aih.NotAnInteger
             check_int_between(int(time), 0, 23, "hour is")
             return True, time + ":00"
-        return 0
     except aih.TooManyValues:
         return False, "Please insert at most only hours and minutes."
     except aih.NotAnInteger:
         return False, "Please make sure the time contains only numbers."
     except aih.ValueOutsideOfScope as error:
         return False, error.value
+    return False
 
 def check_int_between(check: int, min: int, max: int, text: str):
     try:
         if check < min or check > max:
             raise aih.ValueOutsideOfScope("Please make sure the " + text + " a value between: " + \
                 str(min) + " and " + str(max))
+        return True
     except aih.ValueOutsideOfScope:
         raise
     return False

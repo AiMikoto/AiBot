@@ -41,6 +41,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="guildDefaults.json">
+      <SubType>Code</SubType>
+    </Content>
     <Content Include="schedule.json" />
     <Content Include="commands.json" />
   </ItemGroup>

@@ -14,11 +14,6 @@
       "Name": "Guild Raid",
       "Hour": "19:00",
       "Reactions": "guild"
-    },
-    "4": {
-      "Name": "Blackshard Nexus",
-      "Hour": "20:00",
-      "Reactions": "bsn"
     }
   },
   "Saturday": {
@@ -38,19 +33,9 @@
       "Reactions": "guild"
     },
     "4": {
-      "Name": "World Boss Train",
-      "Hour": "16:00",
+      "Name": "Gigantica",
+      "Hour": "16:45",
       "Reactions": "wbt"
-    },
-    "5": {
-      "Name": "Guild Dance Dance",
-      "Hour": "17:00",
-      "Reactions": "dance"
-    },
-    "6": {
-      "Name": "Blackshard Nexus",
-      "Hour": "19:00",
-      "Reactions": "bsn"
     }
   },
   "Sunday": {
@@ -68,16 +53,6 @@
       "Name": "Guild Raid",
       "Hour": "15:00",
       "Reactions": "guild"
-    },
-    "4": {
-      "Name": "World Boss Train",
-      "Hour": "16:00",
-      "Reactions": "wbt"
-    },
-    "5": {
-      "Name": "Blackshard Nexus",
-      "Hour": "17:00",
-      "Reactions": "bsn"
     }
   },
 	"Monday":

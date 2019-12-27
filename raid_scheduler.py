@@ -20,11 +20,12 @@ class Raid:
             "60s": ["<:Bjorn:649964405488091147>",\
                 "<:Lukarax:649964349032497163>",\
                 "<:Pink Bean:649964349326229514>"],
-            "guild":["<:Cactus:652073282886959104>",\
-                "<:Dogs:652073282719186949>",\
-                "<:Golems:652073282731769856>",\
-                "<:Birds:652073282610266112>",\
-                "<:Dragons:652073282476048413>"],
+            "guild":[#"<:Cactus:652073282886959104>",\
+                #"<:Dogs:652073282719186949>",\
+                #"<:Golems:652073282731769856>",\
+                #"<:Birds:652073282610266112>",\
+                "<:Dragons:652073282476048413>",\
+                "✅"],
             "wbt": ["✅"],\
             "dance": ["✅"],\
             "bsn": ["<:Ishura:649961766138281996>",\
@@ -37,6 +38,7 @@ class Raid:
             if extra_reactions:
                self.reactions.extend(["✔","❓","📖"])
             else: self.reactions.append("❓")
+        return 
 
 class RaidScheduler(object):
     def __init__(self, client):
@@ -44,13 +46,13 @@ class RaidScheduler(object):
         self.update_schedule()
         self.schedule_to_post, self.raids = self.apply_schedule()
         self.posted = False
-        self.default_channel = None
-        self.default_test_channel = None
+        self.channel = None
+        self.test_channel = None
         self.deleteOnPost = True
         self.active_raids = []
         self.instructions = self.get_instructions()
-        self.raids_post_hour = "21:00"
-        self.raid_schedule_image = "genesis raid schedule.png"
+        self.post_hour = "21:00"
+        self.image = "genesis raid schedule.png"
 
     def start_raids_loop(self):
         @loop(seconds = 10)
@@ -104,7 +106,7 @@ class RaidScheduler(object):
         "That would be all folks, take care now! ♥"
 
     def get_schedule(self, isTest = False):
-        channel = self.default_channel if not isTest else self.default_test_channel
+        channel = self.channel if not isTest else self.test_channel
         return self.schedule_to_post, self.instructions, channel, self.deleteOnPost
 
     def get_raid_info(self, raid):
@@ -119,3 +121,40 @@ class RaidScheduler(object):
             if i.day == day:
                 daily_raids.append(i)
         return daily_raids
+
+    def update_defaults(self, channel, test_channel, post_hour):
+        self.channel = channel
+        self.test_channel = test_channel
+        self.post_hour = post_hour
+
+class RaidGuild(object):
+    def __init__(self, id, scheduler):
+        self.id = id
+        self.scheduler = scheduler
+        self.get_default_channels()
+
+    def get_default_channels(self):
+        defaults = aiu.read_json("guildDefaults.json")
+        if len(defaults) == 0 or defaults.get(str(self.id)) == None:
+           self.update_defaults()
+           return
+        channel = self.get_channel("channel_id", defaults)
+        test_channel = self.get_channel("test_channel_id", defaults)
+        post_hour = defaults[str(self.id)]["post_hour"]
+        self.scheduler.update_defaults(channel, test_channel, post_hour)
+    
+    def update_defaults(self):
+        channel_id = str(self.scheduler.channel.id) if self.scheduler.channel else "-"
+        test_channel_id = str(self.scheduler.test_channel.id) if self.scheduler.test_channel else "-"
+        default_vals = { "channel_id" : channel_id, \
+            "test_channel_id" : test_channel_id, \
+            "post_hour": self.scheduler.post_hour
+            }
+        default_vals = {self.id : default_vals}
+        aiu.append_to_json("guildDefaults.json", default_vals)
+
+    def get_channel(self, channel_type: str, defaults):
+        channel_id = defaults[str(self.id)][channel_type]
+        if aiu.is_int(channel_id):
+            return self.scheduler.client.get_channel(int(channel_id))
+        return None

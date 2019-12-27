@@ -48,7 +48,7 @@ async def hello(context):
 async def clear_channel(context, channel, limit = 100):
     await aiu.delete_messages(channel, limit)
 
-async def schedule(context, details, scheduler):
+async def schedule(context, details, scheduler, guilds):
     details = list(details)
     if len(details) == 0:
         day = aiu.determine_day()
@@ -60,11 +60,11 @@ async def schedule(context, details, scheduler):
         if command == '-dt':
             await determine_day_and_post_schedule(context, details, scheduler, True)
         if command == '-cc':
-            await change_default_schedule_channel(context, details, scheduler)
+            await change_default_schedule_channel(context, details, scheduler, guilds)
         if command == '-cct':
-            await change_default_schedule_channel(context, details, scheduler, True)
+            await change_default_schedule_channel(context, details, scheduler, guilds, True)
         if command == '-ch':
-            await change_default_raid_post_hour(context, details, scheduler)
+            await change_default_raid_post_hour(context, details, scheduler, guilds)
 
 async def determine_day_and_post_schedule(context, details, scheduler, isTest = False):
     day = aiu.determine_day(details)
@@ -81,7 +81,7 @@ async def post_schedule_for_day(context, details, scheduler, day, isTest = False
     if deleteOnPost:
         await clear_channel(context, channel)
     await channel.send(instructions)
-    await channel.send(file = discord.File(scheduler.raid_schedule_image))
+    await channel.send(file = discord.File(scheduler.image))
     await post_raids_for_day(channel, scheduler, day, isTest)
     await channel.send(aiu.array_to_one_string(aiu.genesis_raid_roles_ids))
 
@@ -94,34 +94,40 @@ async def post_raids_for_day(context, scheduler, day, isTest = False):
         scheduler.active_raids.append(react_to)
         await aiu.add_reactions(context, react_to, i.reactions)
 
-async def change_default_schedule_channel(context, details, scheduler, isTest = False):
+async def change_default_schedule_channel(context, details, scheduler, guilds, isTest = False):
     if len(details) >= 2:
         channel = aiu.find_channel(context, details[1])
         if channel:
             if isTest:
-               scheduler.default_test_channel = channel
+               scheduler.test_channel = channel
                await context.send("The default schedule test channel was changed to: <#" + str(channel.id) + ">")
             else:
-               scheduler.default_channel = channel
+               scheduler.channel = channel
                await context.send("The default schedule channel was changed to: <#" + str(channel.id) + ">")
+            aiu.empty_json("guildDefaults.json")
+            for guild in guilds:
+                guild.update_defaults()
         else: await context.send("There is no channel with that name on this server!")
     else: await context.send("Please specify a channel!")
 
-async def change_default_raid_post_hour(context, details, scheduler):
+async def change_default_raid_post_hour(context, details, scheduler, guilds):
     if len(details) < 2:
         await context.send("Please type the new hour you'd like to use")
     res, msg = aiu.check_if_time_is_valid(details[1])
     if not res:
         await context.send(msg)
         return
-    await context.send("Raids auto-post hour has been changed from " + scheduler.raids_post_hour + " to " + msg)
-    scheduler.raids_post_hour = msg
+    await context.send("Raids auto-post hour has been changed from " + scheduler.post_hour + " to " + msg)
+    scheduler.post_hour = msg
+    aiu.empty_json("guildDefaults.json")
+    for guild in guilds:
+        guild.update_defaults()
 
 async def bot_info(context, scheduler: RaidScheduler):
     message = "Current version: " + aiu.version + "\n"
-    message += "Current default raid channel: " + aiu.channel_to_text(scheduler.default_channel) + "\n"
-    message += "Current default raid test channel: " + aiu.channel_to_text(scheduler.default_test_channel) + "\n"
-    message += "Current hour for auto posting raids: " + scheduler.raids_post_hour + "\n"
+    message += "Current default raid channel: " + aiu.channel_to_text(scheduler.channel) + "\n"
+    message += "Current default raid test channel: " + aiu.channel_to_text(scheduler.test_channel) + "\n"
+    message += "Current hour for auto posting raids: " + scheduler.post_hour + "\n"
     await context.send(message)
 
 async def post_poll(context, details):
