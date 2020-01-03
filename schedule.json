@@ -3,56 +3,86 @@
     "1": {
       "Hour": "17:00",
       "Name": "3x3 60's",
-      "Reactions": "60s"
+      "Reactions": ""
     },
     "2": {
-      "Hour": "18:30",
+      "Hour": "17:45",
       "Name": "3x3 50's",
-      "Reactions": "50s"
+      "Reactions": ""
     },
     "3": {
       "Name": "Guild Raid",
-      "Hour": "19:00",
+      "Hour": "18:15",
       "Reactions": "guild"
+    },
+    "4": {
+      "Name": "Hard Zakum Practice",
+      "Hour": "19:00",
+      "Reactions": ""
+    },
+    "5": {
+      "Name": "Normal Zakum",
+      "Hour": "19:00",
+      "Reactions": ""
     }
   },
   "Saturday": {
     "1": {
       "Hour": "13:00",
       "Name": "3x3 60's",
-      "Reactions": "60s"
+      "Reactions": ""
     },
     "2": {
-      "Hour": "14:30",
+      "Hour": "13:45",
       "Name": "3x3 50's",
-      "Reactions": "50s"
+      "Reactions": ""
     },
     "3": {
       "Name": "Guild Raid",
-      "Hour": "15:00",
+      "Hour": "14:15",
       "Reactions": "guild"
     },
     "4": {
       "Name": "Gigantica",
-      "Hour": "16:45",
-      "Reactions": "wbt"
+      "Hour": "15:00",
+      "Reactions": ""
+    },
+    "5": {
+      "Name": "Hard Zakum Practice",
+      "Hour": "16:00",
+      "Reactions": ""
+    },
+    "6": {
+      "Name": "Normal Zakum",
+      "Hour": "16:00",
+      "Reactions": ""
     }
   },
   "Sunday": {
     "1": {
       "Hour": "13:00",
       "Name": "3x3 60's",
-      "Reactions": "60s"
+      "Reactions": ""
     },
     "2": {
-      "Hour": "14:30",
+      "Hour": "13:45",
       "Name": "3x3 50's",
-      "Reactions": "50s"
+      "Reactions": ""
     },
     "3": {
       "Name": "Guild Raid",
-      "Hour": "15:00",
+      "Hour": "14:15",
       "Reactions": "guild"
+    },
+    "4": {
+      "Name": "Hard Zakum Practice",
+      "Hour": "15:00",
+      "Reactions": ""
+    },
+    "5": {
+      "Name": "Normal Zakum",
+      "Hour": "15:00",
+      "Reactions": ""
     }
   },
 	"Monday":

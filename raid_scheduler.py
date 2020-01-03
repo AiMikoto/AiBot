@@ -12,32 +12,22 @@ class Raid:
         self.format_reactions(reactions)
 
     def format_reactions(self, reactions):
-        if len(reactions) == 0: return
-        extra_reactions = True if reactions is not ("wbt" or "dance") else False
+        self.reactions = ["✅"]
         formatted_reactions = {
-            "none": [],\
-            "50s": ["✅"],\
-            "60s": ["<:Bjorn:649964405488091147>",\
-                "<:Lukarax:649964349032497163>",\
-                "<:Pink Bean:649964349326229514>"],
+            "": [],\
             "guild":[#"<:Cactus:652073282886959104>",\
                 #"<:Dogs:652073282719186949>",\
                 #"<:Golems:652073282731769856>",\
                 #"<:Birds:652073282610266112>",\
                 "<:Dragons:652073282476048413>",\
                 "✅"],
-            "wbt": ["✅"],\
-            "dance": ["✅"],\
             "bsn": ["<:Ishura:649961766138281996>",\
                "<:Landevian:649961766163316736>",\
                "<:Eupheria:649961766054395907>",\
                "<:Ascendant:652070854309445642>"]
             }
-        self.reactions = formatted_reactions.get(reactions)
-        if self.reactions:
-            if extra_reactions:
-               self.reactions.extend(["✔","❓","📖"])
-            else: self.reactions.append("❓")
+        self.reactions.extend(formatted_reactions.get(reactions))
+        self.reactions.extend(["✔","❓","📖"])
         return 
 
 class RaidScheduler(object):
