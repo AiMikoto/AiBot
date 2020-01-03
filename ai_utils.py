@@ -3,7 +3,7 @@ from datetime import datetime
 from discord import utils
 import ai_hour as aih
 
-version = "0.0.19.1227"
+version = "0.0.20.0103"
 
 genesis_raid_roles_ids = ["<@&553023665122312222>", "<@&616384226555723779>"]
 
