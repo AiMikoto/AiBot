@@ -42,7 +42,7 @@ class RaidScheduler(object):
         self.active_raids = []
         self.instructions = self.get_instructions()
         self.post_hour = "21:00"
-        self.image = "genesis raid schedule.png"
+        self.image = "genesis schedule.png"
 
     def start_raids_loop(self):
         @loop(seconds = 10)
