@@ -19,12 +19,12 @@
       "Name": "Normal Zakum",
       "Hour": "18:30",
       "Reactions": ""
-    }
-	"5": {
-      "Name": "Normal Zakum",
-      "Hour": "20:00",
-      "Reactions": ""
-    }
+    },
+	  "5": {
+        "Name": "Normal Zakum",
+        "Hour": "20:00",
+        "Reactions": ""
+      }
   },
   "Saturday": {
     "1": {
@@ -54,7 +54,7 @@
     },
 	"6": {
       "Name": "Normal Zakum",
-      "Hour": "15:00",
+      "Hour": "16:30",
       "Reactions": ""
     }
   },
@@ -79,7 +79,7 @@
       "Hour": "14:30",
       "Reactions": ""
     },
-	"4": {
+    "5": {
       "Name": "Normal Zakum",
       "Hour": "16:00",
       "Reactions": ""
