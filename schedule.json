@@ -11,7 +11,7 @@
       "Reactions": "guild"
     },
     "3": {
-      "Name": "Hard Zakum Practice/Clear",
+      "Name": "Hard Zakum",
       "Hour": "18:30",
       "Reactions": ""
     },
@@ -22,7 +22,7 @@
     },
 	  "5": {
         "Name": "Normal Zakum",
-        "Hour": "20:00",
+        "Hour": "19:30",
         "Reactions": ""
       }
   },
@@ -43,7 +43,7 @@
       "Reactions": ""
     },
     "4": {
-      "Name": "Hard Zakum Practice/Clear",
+      "Name": "Hard Zakum",
       "Hour": "15:00",
       "Reactions": ""
     },
@@ -54,7 +54,7 @@
     },
 	"6": {
       "Name": "Normal Zakum",
-      "Hour": "16:30",
+      "Hour": "16:00",
       "Reactions": ""
     }
   },
@@ -70,7 +70,7 @@
       "Reactions": "guild"
     },
     "3": {
-      "Name": "Hard Zakum Practice",
+      "Name": "Hard Zakum",
       "Hour": "14:30",
       "Reactions": ""
     },
@@ -81,7 +81,7 @@
     },
     "5": {
       "Name": "Normal Zakum",
-      "Hour": "16:00",
+      "Hour": "15:30",
       "Reactions": ""
     }
   },
