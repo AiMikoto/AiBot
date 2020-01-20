@@ -3,6 +3,7 @@ import os
 from discord.ext import commands
 import ai_commands as ai_cmd
 import raid_scheduler as rs
+import ai_guild as aig
 from dotenv import load_dotenv
 
 class Runner:
@@ -58,7 +59,7 @@ class Runner:
     def add_guilds(self):
         self.guilds = []
         for guild in self.client.guilds:
-            self.guilds.append(rs.RaidGuild(guild.id, rs.RaidScheduler(self.client)))
+            self.guilds.append(aig.Guild(guild.id, rs.Scheduler(self.client)))
 
     def determine_scheduler(self, context):
         for guild in self.guilds:

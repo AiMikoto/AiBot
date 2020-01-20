@@ -27,6 +27,9 @@
     <Compile Include="ai_commands.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ai_guild.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="ai_hour.py">
       <SubType>Code</SubType>
     </Compile>
@@ -44,8 +47,10 @@
     <Content Include="guildDefaults.json">
       <SubType>Code</SubType>
     </Content>
+    <Content Include="raid_reactions.json" />
     <Content Include="schedule.json" />
     <Content Include="commands.json" />
+    <Content Include="schedule_instructions.txt" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6" />

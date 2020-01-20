@@ -2,10 +2,19 @@ import json
 from datetime import datetime
 from discord import utils
 import ai_hour as aih
+import codecs
 
-version = "0.0.20.0103"
+version = "0.0.20.0120"
 
 genesis_raid_roles_ids = ["<@&553023665122312222>", "<@&616384226555723779>"]
+
+def read_text_file(filename: str):
+    res = ""
+    with codecs.open(filename, encoding = 'utf-8') as f:
+        for line in f:
+            res += line
+        return res
+    return None
 
 def read_json(json_name: str):
     with open(json_name, 'r') as f:

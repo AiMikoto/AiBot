@@ -1,5 +1,5 @@
 import ai_utils as aiu
-from raid_scheduler import RaidScheduler
+from raid_scheduler import Scheduler
 from operator import attrgetter
 import discord
 import asyncio
@@ -73,7 +73,7 @@ async def determine_day_and_post_schedule(context, details, scheduler, isTest = 
     else: await context.send("That is not a valid day!")
 
 async def post_schedule_for_day(context, details, scheduler, day, isTest = False):
-    message, instructions, channel, deleteOnPost = scheduler.get_schedule(isTest)
+    instructions, channel, deleteOnPost = scheduler.get_schedule(isTest)
     if not channel:
         testmsg = "test " if isTest else ""
         await context.send("A default " + testmsg + "channel hasn't been set to post raids on this server.")
@@ -123,7 +123,7 @@ async def change_default_raid_post_hour(context, details, scheduler, guilds):
     for guild in guilds:
         guild.update_defaults()
 
-async def bot_info(context, scheduler: RaidScheduler):
+async def bot_info(context, scheduler: Scheduler):
     message = "Current version: " + aiu.version + "\n"
     message += "Current default raid channel: " + aiu.channel_to_text(scheduler.channel) + "\n"
     message += "Current default raid test channel: " + aiu.channel_to_text(scheduler.test_channel) + "\n"
