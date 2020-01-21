@@ -30,7 +30,10 @@
     <Compile Include="ai_guild.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ai_hour.py">
+    <Compile Include="ai_exceptions.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ai_roles.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ai_utils.py">
@@ -47,7 +50,10 @@
     <Content Include="guildDefaults.json">
       <SubType>Code</SubType>
     </Content>
-    <Content Include="raid_reactions.json" />
+    <Content Include="role_messages.json">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="reactions.json" />
     <Content Include="schedule.json" />
     <Content Include="commands.json" />
     <Content Include="schedule_instructions.txt" />

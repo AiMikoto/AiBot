@@ -1,4 +1,5 @@
 import ai_utils as aiu
+import ai_roles as air
 
 class Guild(object):
     def __init__(self, id, scheduler):
@@ -15,6 +16,7 @@ class Guild(object):
         test_channel = self.get_channel("test_channel_id", defaults)
         post_hour = defaults[str(self.id)]["post_hour"]
         self.scheduler.update_defaults(channel, test_channel, post_hour)
+
     
     def update_defaults(self):
         channel_id = str(self.scheduler.channel.id) if self.scheduler.channel else "-"

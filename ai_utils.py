@@ -1,7 +1,7 @@
 import json
 from datetime import datetime
 from discord import utils
-import ai_hour as aih
+import ai_exceptions as aie
 import codecs
 
 version = "0.0.20.0120"
@@ -55,7 +55,7 @@ def find_channel(context, channel: str):
                return c
     return None
 
-async def add_reactions(context, message, reactions):
+async def add_reactions(message, reactions):
     for i in reactions:
         await message.add_reaction(i)
 
@@ -113,34 +113,34 @@ def check_if_time_is_valid(time: str):
         if ":" in time:
             time_val = time.split(":")
             if len(time_val) > 2:
-                raise aih.TooManyValues
+                raise aie.TooManyValues
             h, m = time_val
             if not is_int(h) or not is_int(m):
-                raise aih.NotAnInteger
+                raise aie.NotAnInteger
             h, m = int(h), int(m)
             check_int_between(h, 0, 23, "hour is")
             check_int_between(m, 0, 59, "minutes are")
             return True, time
         else:
             if not is_int(time):
-                raise aih.NotAnInteger
+                raise aie.NotAnInteger
             check_int_between(int(time), 0, 23, "hour is")
             return True, time + ":00"
-    except aih.TooManyValues:
+    except aie.TooManyValues:
         return False, "Please insert at most only hours and minutes."
-    except aih.NotAnInteger:
+    except aie.NotAnInteger:
         return False, "Please make sure the time contains only numbers."
-    except aih.ValueOutsideOfScope as error:
+    except aie.ValueOutsideOfScope as error:
         return False, error.value
     return False
 
 def check_int_between(check: int, min: int, max: int, text: str):
     try:
         if check < min or check > max:
-            raise aih.ValueOutsideOfScope("Please make sure the " + text + " a value between: " + \
+            raise aie.ValueOutsideOfScope("Please make sure the " + text + " a value between: " + \
                 str(min) + " and " + str(max))
         return True
-    except aih.ValueOutsideOfScope:
+    except aie.ValueOutsideOfScope:
         raise
     return False
 

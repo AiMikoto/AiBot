@@ -13,7 +13,7 @@ class Raid:
 
     def format_reactions(self, reactions):
         self.reactions = ["✅"]
-        self.reactions.extend(aiu.read_json("raid_reactions.json").get(reactions))
+        self.reactions.extend(aiu.read_json("reactions.json")["raid"].get(reactions))
         self.reactions.extend(["✔","❓","📖"])
         return 
 

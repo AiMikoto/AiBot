@@ -43,9 +43,13 @@ async def details_for_command(user, commands, command):
     await user.send(embed=embed)
 
 async def hello(context):
+    f = open("emojiids.txt","w")
+    for emoji in context.guild.emojis:
+        f.write("\"<:" + emoji.name + ":" + str(emoji.id) + ">\"\n")
+    f.close()
     await context.send('Hello, ' + aiu.get_author_ping_name(context) + '! I\'m Ai.')
 
-async def clear_channel(context, channel, limit = 100):
+async def clear_channel(channel, limit = 100):
     await aiu.delete_messages(channel, limit)
 
 async def schedule(context, details, scheduler, guilds):
@@ -79,7 +83,7 @@ async def post_schedule_for_day(context, details, scheduler, day, isTest = False
         await context.send("A default " + testmsg + "channel hasn't been set to post raids on this server.")
         return
     if deleteOnPost:
-        await clear_channel(context, channel)
+        await clear_channel(channel)
     await channel.send(instructions)
     await channel.send(file = discord.File(scheduler.image))
     await post_raids_for_day(channel, scheduler, day, isTest)
@@ -92,7 +96,7 @@ async def post_raids_for_day(context, scheduler, day, isTest = False):
         message = day + " " + i.name + ", " + i.hour + " ST"
         react_to = await context.send(message)
         scheduler.active_raids.append(react_to)
-        await aiu.add_reactions(context, react_to, i.reactions)
+        await aiu.add_reactions(react_to, i.reactions)
 
 async def change_default_schedule_channel(context, details, scheduler, guilds, isTest = False):
     if len(details) >= 2:
@@ -151,4 +155,4 @@ async def post_poll(context, details):
     embed.set_author(name = context.message.author.display_name,
                      icon_url = context.message.author.avatar_url)
     msg = await context.send(embed = embed)
-    await aiu.add_reactions(context, msg, reactions)
+    await aiu.add_reactions(msg, reactions)

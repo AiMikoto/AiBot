@@ -4,6 +4,7 @@ from discord.ext import commands
 import ai_commands as ai_cmd
 import raid_scheduler as rs
 import ai_guild as aig
+import ai_roles as air
 from dotenv import load_dotenv
 
 class Runner:
@@ -11,6 +12,7 @@ class Runner:
         self.token = self.read_token()
         self.client = commands.Bot(command_prefix = 'ai!')
         self.add_commands()
+        self.add_events()
         self.on_bot_ready()
 
     def read_token(self):
@@ -46,12 +48,25 @@ class Runner:
         @self.client.command(aliases = ['p'])
         async def poll(context, *details):
             await ai_cmd.post_poll(context, details)
+
+    def add_events(self):
+        @self.client.event
+        async def on_raw_reaction_add(payload):
+            await air.add_role(payload, self.client.guilds)
+
+        @self.client.event
+        async def on_raw_reaction_remove(payload):
+            await air.remove_role(payload, self.client.guilds)
     
     def on_bot_ready(self):
         @self.client.event
         async def on_ready():
             print('Logged in as: {0.user}'.format(self.client))
             print('------')
+            #ch = self.client.get_channel(610517960133443633)
+            #if ch:
+                #await ai_cmd.clear_channel(ch)
+                #await air.post_role_messages(ch, ch.guild.id)
             self.add_guilds()
 
     def run(self): self.client.run(self.token)
