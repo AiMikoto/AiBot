@@ -6,28 +6,28 @@
       "Reactions": "guild"
     },
     "2": {
-      "Name": "Normal Infernog x2",
+      "Name": "Hard Zakum",
       "Hour": "17:45",
       "Reactions": ""
     },
     "3": {
-      "Name": "Normal Infernog x3",
+      "Name": "Normal Zakum",
       "Hour": "17:45",
       "Reactions": ""
     },
     "4": {
-      "Name": "Hard Zakum",
+      "Name": "Normal Infernog",
       "Hour": "18:30",
       "Reactions": ""
     },
     "5": {
-      "Name": "Normal Zakum",
+      "Name": "Hard Infernog",
       "Hour": "18:30",
       "Reactions": ""
     },
     "6": {
-      "Name": "Hard Infernog Practice(Clear)",
-      "Hour": "19:15",
+      "Name": "Normal Infernog",
+      "Hour": "20:00",
       "Reactions": ""
     }
   },
@@ -63,13 +63,13 @@
       "Reactions": ""
     },
     "7": {
-      "Name": "Hard Infernog Practice(Clear)",
+      "Name": "Hard Infernog",
       "Hour": "15:45",
       "Reactions": ""
     },
     "8": {
       "Name": "Normal Infernog",
-      "Hour": "19:00",
+      "Hour": "17:00",
       "Reactions": ""
     }
   },
@@ -105,13 +105,13 @@
       "Reactions": ""
     },
     "7": {
-      "Name": "Hard Infernog Practice(Clear)",
+      "Name": "Hard Infernog",
       "Hour": "15:15",
       "Reactions": ""
     },
     "8": {
       "Name": "Normal Infernog",
-      "Hour": "18:00",
+      "Hour": "16:30",
       "Reactions": ""
     }
   },
