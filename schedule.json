@@ -95,21 +95,16 @@
       "Reactions": ""
     },
     "5": {
-      "Name": "Normal Zakum",
-      "Hour": "14:30",
-      "Reactions": ""
-    },
-    "6": {
       "Name": "Normal Infernog",
       "Hour": "15:15",
       "Reactions": ""
     },
-    "7": {
+    "6": {
       "Name": "Hard Infernog",
       "Hour": "15:15",
       "Reactions": ""
     },
-    "8": {
+    "7": {
       "Name": "Normal Infernog",
       "Hour": "16:30",
       "Reactions": ""
