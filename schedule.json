@@ -17,57 +17,52 @@
     },
     "4": {
       "Name": "Normal Infernog",
-      "Hour": "18:30",
+      "Hour": "19:00",
       "Reactions": ""
     },
     "5": {
       "Name": "Hard Infernog",
-      "Hour": "18:30",
+      "Hour": "19:00",
       "Reactions": ""
     },
     "6": {
       "Name": "Normal Infernog",
-      "Hour": "20:00",
+      "Hour": "20:30",
       "Reactions": ""
     }
   },
   "Saturday": {
     "1": {
-      "Hour": "13:00",
-      "Name": "3x3 60's",
-      "Reactions": ""
-    },
-    "2": {
       "Name": "Guild Raid",
-      "Hour": "13:45",
+      "Hour": "13:00",
       "Reactions": "guild"
     },
-    "3": {
+    "2": {
       "Name": "Gigantica",
+      "Hour": "13:45",
+      "Reactions": ""
+    },
+    "3": {
+      "Name": "Hard Zakum",
       "Hour": "14:30",
       "Reactions": ""
     },
     "4": {
-      "Name": "Hard Zakum",
-      "Hour": "15:00",
+      "Name": "Normal Zakum",
+      "Hour": "14:30",
       "Reactions": ""
     },
     "5": {
-      "Name": "Normal Zakum",
-      "Hour": "15:00",
-      "Reactions": ""
-    },
-    "6": {
       "Name": "Normal Infernog",
       "Hour": "15:45",
       "Reactions": ""
     },
-    "7": {
+    "6": {
       "Name": "Hard Infernog",
       "Hour": "15:45",
       "Reactions": ""
     },
-    "8": {
+    "7": {
       "Name": "Normal Infernog",
       "Hour": "17:00",
       "Reactions": ""
@@ -75,36 +70,31 @@
   },
   "Sunday": {
     "1": {
-      "Hour": "13:00",
-      "Name": "3x3 60's",
-      "Reactions": ""
-    },
-    "2": {
       "Name": "Guild Raid",
-      "Hour": "13:45",
+      "Hour": "13:00",
       "Reactions": "guild"
     },
-    "3": {
+    "2": {
       "Name": "Hard Zakum",
-      "Hour": "14:30",
+      "Hour": "13:45",
+      "Reactions": ""
+    },
+    "3": {
+      "Name": "Normal Zakum",
+      "Hour": "13:45",
       "Reactions": ""
     },
     "4": {
-      "Name": "Normal Zakum",
-      "Hour": "14:30",
+      "Name": "Normal Infernog",
+      "Hour": "15:00",
       "Reactions": ""
     },
     "5": {
-      "Name": "Normal Infernog",
-      "Hour": "15:15",
+      "Name": "Hard Infernog",
+      "Hour": "15:00",
       "Reactions": ""
     },
     "6": {
-      "Name": "Hard Infernog",
-      "Hour": "15:15",
-      "Reactions": ""
-    },
-    "7": {
       "Name": "Normal Infernog",
       "Hour": "16:30",
       "Reactions": ""
