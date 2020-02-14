@@ -31,7 +31,6 @@ async def role_utility(payload, guilds, add_role):
             else: raise aie.StandardException("no message")
         else: raise aie.StandardException("no guild")
     except aie.StandardException as e:
-        print(e.value)
         return False
     return False
 

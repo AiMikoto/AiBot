@@ -1,120 +1,118 @@
 {
-  "Friday": {
-    "1": {
+  "Friday": [
+    {
       "Hour": "17:00",
       "Name": "Guild Raid",
       "Reactions": "guild"
     },
-    "2": {
+    {
       "Name": "Hard Zakum",
       "Hour": "17:45",
       "Reactions": ""
     },
-    "3": {
+    {
       "Name": "Normal Zakum",
       "Hour": "17:45",
       "Reactions": ""
     },
-    "4": {
-      "Name": "Normal Infernog",
-      "Hour": "19:00",
-      "Reactions": ""
-    },
-    "5": {
+    {
       "Name": "Hard Infernog",
       "Hour": "19:00",
       "Reactions": ""
     },
-    "6": {
+    {
+      "Name": "Normal Infernog",
+      "Hour": "19:00",
+      "Reactions": ""
+    },
+    {
       "Name": "Normal Infernog",
       "Hour": "20:30",
       "Reactions": ""
     }
-  },
-  "Saturday": {
-    "1": {
+  ],
+  "Saturday": [
+    {
       "Name": "Guild Raid",
       "Hour": "13:00",
       "Reactions": "guild"
     },
-    "2": {
+    {
       "Name": "Gigantica",
       "Hour": "13:45",
       "Reactions": ""
     },
-    "3": {
+    {
       "Name": "Hard Zakum",
       "Hour": "14:30",
       "Reactions": ""
     },
-    "4": {
+    {
       "Name": "Normal Zakum",
       "Hour": "14:30",
       "Reactions": ""
     },
-    "5": {
-      "Name": "Normal Infernog",
-      "Hour": "15:45",
-      "Reactions": ""
-    },
-    "6": {
+    {
       "Name": "Hard Infernog",
       "Hour": "15:45",
       "Reactions": ""
     },
-    "7": {
+    {
       "Name": "Normal Infernog",
+      "Hour": "15:45",
+      "Reactions": ""
+    },
+    {
+      "Name": "Guild Dance Dance",
       "Hour": "17:00",
       "Reactions": ""
+    },
+    {
+      "Name": "Normal Infernog",
+      "Hour": "19:00",
+      "Reactions": ""
     }
-  },
-  "Sunday": {
-    "1": {
+  ],
+  "Sunday": [
+    {
       "Name": "Guild Raid",
       "Hour": "13:00",
       "Reactions": "guild"
     },
-    "2": {
+    {
       "Name": "Hard Zakum",
       "Hour": "13:45",
       "Reactions": ""
     },
-    "3": {
+    {
       "Name": "Normal Zakum",
       "Hour": "13:45",
       "Reactions": ""
     },
-    "4": {
-      "Name": "Normal Infernog",
-      "Hour": "15:00",
-      "Reactions": ""
-    },
-    "5": {
+    {
       "Name": "Hard Infernog",
       "Hour": "15:00",
       "Reactions": ""
     },
-    "6": {
+    {
+      "Name": "Normal Infernog",
+      "Hour": "15:00",
+      "Reactions": ""
+    },
+    {
       "Name": "Normal Infernog",
       "Hour": "16:30",
       "Reactions": ""
     }
-  },
-	"Monday":
-	{
-    "1": {
+  ],
+  "Monday": [
+    {
       "Name": "Guild Raid",
       "Hour": "18:00",
       "Reactions": "guild"
     }
-	},
-	"Tuesday":
-	{
-	},
-	"Wednesday":
-	{
-	},
-	"Thursday":
-	{
-	}
+  ],
+  "Tuesday": [],
+  "Wednesday": [],
+  "Thursday": []
 }

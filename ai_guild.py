@@ -16,6 +16,7 @@ class Guild(object):
         test_channel = self.get_channel("test_channel_id", defaults)
         post_hour = defaults[str(self.id)]["post_hour"]
         self.scheduler.update_defaults(channel, test_channel, post_hour)
+        self.scheduler.start_raids_loop()
 
     
     def update_defaults(self):

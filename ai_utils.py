@@ -1,10 +1,11 @@
 import json
 from datetime import datetime
-from discord import utils
+import discord
 import ai_exceptions as aie
 import codecs
+from operator import attrgetter
 
-version = "0.0.20.0120"
+version = "0.6.2"
 
 genesis_raid_roles_ids = ["<@&553023665122312222>", "<@&616384226555723779>"]
 
@@ -23,7 +24,7 @@ def read_json(json_name: str):
 
 def write_json(json_name: str, to_write):
     with open(json_name, 'w') as f:
-        json.dump(to_write, f)
+        json.dump(to_write, f, indent = 2)
     return None
 
 def append_to_json(json_name: str, to_append):
@@ -105,7 +106,7 @@ def determine_day(details = None):
             return day
         return None
     else:
-        day = datetime.today().weekday()
+        day = datetime.today().weekday() + 1
         return days.get(day)
 
 def check_if_time_is_valid(time: str):
@@ -178,3 +179,61 @@ def index_to_emoji(index):
         15:"🇴"
         }
     return emojis.get(index)
+
+async def determine_day_and_post_schedule(context, details, scheduler, isTest = False):
+    day = determine_day(details)
+    if day:
+        await post_schedule_for_day(context, details, scheduler, day, isTest)
+    else: await context.send("That is not a valid day!")
+
+async def post_schedule_for_day(context, details, scheduler, day, isTest = False):
+    instructions, channel, deleteOnPost = scheduler.get_schedule(isTest)
+    if not channel:
+        testmsg = "test " if isTest else ""
+        await context.send("A default " + testmsg + "channel hasn't been set to post raids on this server.")
+        return
+    if deleteOnPost:
+        await delete_messages(channel)
+    await channel.send(instructions)
+    await channel.send(file = discord.File(scheduler.image))
+    await post_raids_for_day(channel, scheduler, day, isTest)
+    if(len(scheduler.get_raids(day)) > 0):
+        await channel.send(array_to_one_string(genesis_raid_roles_ids))
+
+async def post_raids_for_day(context, scheduler, day, isTest = False):
+    raids = scheduler.get_raids(day)
+    sorted(raids,key = attrgetter("hour"))
+    for i in raids:
+        message = day + " " + i.name + ", " + i.hour + " ST"
+        react_to = await context.send(message)
+        scheduler.active_raids.append(react_to)
+        await add_reactions(react_to, i.reactions)
+
+async def change_default_schedule_channel(context, details, scheduler, guilds, isTest = False):
+    if len(details) >= 2:
+        channel = find_channel(context, details[1])
+        if channel:
+            if isTest:
+               scheduler.test_channel = channel
+               await context.send("The default schedule test channel was changed to: <#" + str(channel.id) + ">")
+            else:
+               scheduler.channel = channel
+               await context.send("The default schedule channel was changed to: <#" + str(channel.id) + ">")
+            empty_json("guildDefaults.json")
+            for guild in guilds:
+                guild.update_defaults()
+        else: await context.send("There is no channel with that name on this server!")
+    else: await context.send("Please specify a channel!")
+
+async def change_default_raid_post_hour(context, details, scheduler, guilds):
+    if len(details) < 2:
+        await context.send("Please type the new hour you'd like to use")
+    res, msg = check_if_time_is_valid(details[1])
+    if not res:
+        await context.send(msg)
+        return
+    await context.send("Raids auto-post hour has been changed from " + scheduler.post_hour + " to " + msg)
+    scheduler.post_hour = msg
+    empty_json("guildDefaults.json")
+    for guild in guilds:
+        guild.update_defaults()

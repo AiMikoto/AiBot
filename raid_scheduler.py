@@ -21,23 +21,30 @@ class Scheduler(object):
     def __init__(self, client):
         self.client = client
         self.update_schedule()
+        self.schedule_requires_sorting = False
+        if self.schedule_requires_sorting:
+            self.sort_schedule()
         self.raids = self.apply_schedule()
         self.posted = False
         self.channel = None
         self.test_channel = None
         self.deleteOnPost = True
         self.active_raids = []
-        self.post_hour = "21:00"
+        self.post_hour = None
         self.image = "genesis schedule.png"
 
     def start_raids_loop(self):
+        post_hour, post_minute = map(int, self.post_hour.split(':'))
+        self.posted_for_day = [False, False, False, False, False, False, False]
         @loop(seconds = 10)
         async def check_hour():
-            now = datetime.now(timezone.utc).strftime('%H:%M:%S').split(':')
-            h = int(now[0])
-            m = int(now[1])
-            s = int(now[2])
-
+            now = datetime.now(timezone.utc)
+            weekday = datetime.today().weekday()
+            if now.hour == post_hour and now.hour == post_minute and not self.posted_for_day[weekday]:
+                await aiu.determine_day_and_post_schedule(self.test_channel, [0, weekday + 1], self, True)
+                self.posted_for_day[weekday] = True
+                if weekday == 0: weekday = 7
+                self.posted_for_day[weekday - 1] = False
         check_hour.start()
 
     def update_schedule(self):
@@ -53,9 +60,18 @@ class Scheduler(object):
             for day in schedule:
                 if len(schedule[day]) > 0:
                     for i in schedule[day]:
-                        name, hour, reactions = self.get_raid_info(schedule[day][i])
+                        name, hour, reactions = self.get_raid_info(i)
                         raids.append(Raid(name, hour, day, reactions))
+        
         return raids
+
+    def sort_schedule(self):
+        if self.schedule:
+            for day in self.schedule:
+                self.schedule[day] = sorted(self.schedule[day],
+                   key=lambda dict_keys: (dict_keys['Hour'], dict_keys['Name']))
+        aiu.write_json('schedule.json', self.schedule)
+        self.schedule_requires_sorting = False
 
     def get_schedule(self, isTest = False):
         channel = self.channel if not isTest else self.test_channel
