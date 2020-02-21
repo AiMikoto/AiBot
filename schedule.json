@@ -112,7 +112,19 @@
       "Reactions": "guild"
     }
   ],
-  "Tuesday": [],
-  "Wednesday": [],
+  "Tuesday": [
+	{
+      "Name": "Hard Infernog Practice",
+      "Hour": "18:00",
+      "Reactions": ""
+    }
+  ],
+  "Wednesday": [
+	{
+      "Name": "Hard Infernog Practice",
+      "Hour": "18:00",
+      "Reactions": ""
+    }
+  ],
   "Thursday": []
 }
