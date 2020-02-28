@@ -7,12 +7,12 @@
     },
     {
       "Name": "Hard Zakum",
-      "Hour": "17:45",
+      "Hour": "18:00",
       "Reactions": ""
     },
     {
       "Name": "Normal Zakum",
-      "Hour": "17:45",
+      "Hour": "18:00",
       "Reactions": ""
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "Name": "Normal Infernog",
-      "Hour": "20:30",
+      "Hour": "20:00",
       "Reactions": ""
     }
   ],
@@ -39,27 +39,27 @@
     },
     {
       "Name": "Gigantica",
-      "Hour": "13:45",
+      "Hour": "14:00",
       "Reactions": ""
     },
     {
       "Name": "Hard Zakum",
-      "Hour": "14:30",
+      "Hour": "15:00",
       "Reactions": ""
     },
     {
       "Name": "Normal Zakum",
-      "Hour": "14:30",
+      "Hour": "15:00",
       "Reactions": ""
     },
     {
       "Name": "Hard Infernog",
-      "Hour": "15:45",
+      "Hour": "16:00",
       "Reactions": ""
     },
     {
       "Name": "Normal Infernog",
-      "Hour": "15:45",
+      "Hour": "16:00",
       "Reactions": ""
     },
     {
@@ -81,12 +81,12 @@
     },
     {
       "Name": "Hard Zakum",
-      "Hour": "13:45",
+      "Hour": "14:00",
       "Reactions": ""
     },
     {
       "Name": "Normal Zakum",
-      "Hour": "13:45",
+      "Hour": "14:00",
       "Reactions": ""
     },
     {
@@ -101,7 +101,12 @@
     },
     {
       "Name": "Normal Infernog",
-      "Hour": "16:30",
+      "Hour": "16:00",
+      "Reactions": ""
+    },
+    {
+      "Name": "Hard Infernog Practice",
+      "Hour": "18:00",
       "Reactions": ""
     }
   ],
