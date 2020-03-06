@@ -1,0 +1,525 @@
+[
+  {
+    "Name": "AiMikoto",
+    "ID": 258961821635969047,
+    "contribution": 390,
+    "eligible": true
+  },
+  {
+    "Name": "Akara",
+    "ID": 389155795993886733,
+    "contribution": 240,
+    "eligible": false
+  },
+  {
+    "Name": "Junae",
+    "ID": 147133862881787904,
+    "contribution": 825,
+    "eligible": true
+  },
+  {
+    "Name": "Yuzukii",
+    "ID": 175333358178402304,
+    "contribution": 790,
+    "eligible": true
+  },
+  {
+    "Name": "ziPzAaP",
+    "ID": 211082839003758592,
+    "contribution": 730,
+    "eligible": true
+  },
+  {
+    "Name": "Takumi",
+    "ID": 165922333293412352,
+    "contribution": 715,
+    "eligible": true
+  },
+  {
+    "Name": "Lamizure",
+    "ID": 221236665971245056,
+    "contribution": 655,
+    "eligible": true
+  },
+  {
+    "Name": "SuperSiili",
+    "ID": 131513869825736704,
+    "contribution": 620,
+    "eligible": true
+  },
+  {
+    "Name": "Nacjac",
+    "ID": 170877934066728961,
+    "contribution": 615,
+    "eligible": true
+  },
+  {
+    "Name": "Vinel",
+    "ID": 475008236437766154,
+    "contribution": 590,
+    "eligible": true
+  },
+  {
+    "Name": "Sorari",
+    "ID": 186192919789699072,
+    "contribution": 450,
+    "eligible": true
+  },
+  {
+    "Name": "Fright",
+    "ID": 95611743102832640,
+    "contribution": 390,
+    "eligible": true
+  },
+  {
+    "Name": "Zarja",
+    "ID": 160648898233368577,
+    "contribution": 260,
+    "eligible": true
+  },
+  {
+    "Name": "Darling",
+    "ID": 324928577604681728,
+    "contribution": 295,
+    "eligible": true
+  },
+  {
+    "Name": "MisterHD",
+    "ID": 140090542611496960,
+    "contribution": 225,
+    "eligible": true
+  },
+  {
+    "Name": "Coraline",
+    "ID": 438687514568556554,
+    "contribution": 210,
+    "eligible": false
+  },
+  {
+    "Name": "PsychoPriest",
+    "ID": 292283768537088010,
+    "contribution": 70,
+    "eligible": false
+  },
+  {
+    "Name": "Miki",
+    "ID": 273853901852114946,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Sanly",
+    "ID": 193379301729501194,
+    "contribution": 20,
+    "eligible": false
+  },
+  {
+    "Name": "Soundless",
+    "ID": 414656496782016523,
+    "contribution": 60,
+    "eligible": false
+  },
+  {
+    "Name": "RequiemX",
+    "ID": 97022858747711488,
+    "contribution": 770,
+    "eligible": true
+  },
+  {
+    "Name": "Taichu",
+    "ID": 311942517463711754,
+    "contribution": 800,
+    "eligible": true
+  },
+  {
+    "Name": "Zanni",
+    "ID": 440099124369424384,
+    "contribution": 800,
+    "eligible": true
+  },
+  {
+    "Name": "Yuriaisqt",
+    "ID": 197713142271180800,
+    "contribution": 710,
+    "eligible": true
+  },
+  {
+    "Name": "Svitovski",
+    "ID": 683663484499525651,
+    "contribution": 690,
+    "eligible": true
+  },
+  {
+    "Name": "Saleme",
+    "ID": 414337868840960000,
+    "contribution": 670,
+    "eligible": false
+  },
+  {
+    "Name": "xXDiaoChanXx",
+    "ID": 319067687147929601,
+    "contribution": 615,
+    "eligible": true
+  },
+  {
+    "Name": "Hurlte",
+    "ID": -1,
+    "contribution": 580,
+    "eligible": true
+  },
+  {
+    "Name": "Juno",
+    "ID": 138317890691530752,
+    "contribution": 580,
+    "eligible": true
+  },
+  {
+    "Name": "Ritzi",
+    "ID": 188274959938748417,
+    "contribution": 815,
+    "eligible": true
+  },
+  {
+    "Name": "driiKa",
+    "ID": 294936485566873601,
+    "contribution": 640,
+    "eligible": false
+  },
+  {
+    "Name": "Pawie",
+    "ID": 194566888276230146,
+    "contribution": 577,
+    "eligible": true
+  },
+  {
+    "Name": "Troy",
+    "ID": 179233451680071680,
+    "contribution": 565,
+    "eligible": true
+  },
+  {
+    "Name": "Scar",
+    "ID": 116243442597625858,
+    "contribution": 590,
+    "eligible": true
+  },
+  {
+    "Name": "Rolgen",
+    "ID": 236181407230066689,
+    "contribution": 555,
+    "eligible": true
+  },
+  {
+    "Name": "ITohruI",
+    "ID": 159451455701516290,
+    "contribution": 485,
+    "eligible": true
+  },
+  {
+    "Name": "deltis",
+    "ID": 194404360199995392,
+    "contribution": 480,
+    "eligible": true
+  },
+  {
+    "Name": "2blades",
+    "ID": 291207138758361088,
+    "contribution": 455,
+    "eligible": false
+  },
+  {
+    "Name": "Aethegor",
+    "ID": 279658495635357706,
+    "contribution": 455,
+    "eligible": false
+  },
+  {
+    "Name": "BlueClover",
+    "ID": 437961511114113024,
+    "contribution": 452,
+    "eligible": true
+  },
+  {
+    "Name": "Elchimo",
+    "ID": 173724637686005761,
+    "contribution": 505,
+    "eligible": true
+  },
+  {
+    "Name": "pekesti",
+    "ID": 119833711712665600,
+    "contribution": 420,
+    "eligible": true
+  },
+  {
+    "Name": "Auwakip",
+    "ID": 161616437960507392,
+    "contribution": 400,
+    "eligible": true
+  },
+  {
+    "Name": "YuukiDes",
+    "ID": 154316403757809665,
+    "contribution": 365,
+    "eligible": true
+  },
+  {
+    "Name": "Navarone",
+    "ID": 574321132493209621,
+    "contribution": 340,
+    "eligible": true
+  },
+  {
+    "Name": "Waffle",
+    "ID": 458609149949902849,
+    "contribution": 370,
+    "eligible": false
+  },
+  {
+    "Name": "Charys",
+    "ID": 212228885100625920,
+    "contribution": 300,
+    "eligible": true
+  },
+  {
+    "Name": "EmicaChan",
+    "ID": 533990344115879946,
+    "contribution": 280,
+    "eligible": true
+  },
+  {
+    "Name": "Hanoka",
+    "ID": 197098094284767232,
+    "contribution": 330,
+    "eligible": true
+  },
+  {
+    "Name": "Lynnx",
+    "ID": 310094884616798210,
+    "contribution": 265,
+    "eligible": false
+  },
+  {
+    "Name": "BroQKe",
+    "ID": 248693794327756800,
+    "contribution": 260,
+    "eligible": true
+  },
+  {
+    "Name": "iampoll",
+    "ID": 293017102376370177,
+    "contribution": 246,
+    "eligible": true
+  },
+  {
+    "Name": "Ejdrienn",
+    "ID": 281484352783646720,
+    "contribution": 220,
+    "eligible": true
+  },
+  {
+    "Name": "Frossty",
+    "ID": 278988615869005824,
+    "contribution": 220,
+    "eligible": true
+  },
+  {
+    "Name": "Mynion",
+    "ID": 411524283299397642,
+    "contribution": 210,
+    "eligible": true
+  },
+  {
+    "Name": "Totaro",
+    "ID": 462335141969264678,
+    "contribution": 170,
+    "eligible": false
+  },
+  {
+    "Name": "Traysi",
+    "ID": 247825820704309258,
+    "contribution": 155,
+    "eligible": true
+  },
+  {
+    "Name": "OPICHI",
+    "ID": 414930117773492254,
+    "contribution": 94,
+    "eligible": false
+  },
+  {
+    "Name": "Quardrina",
+    "ID": 146653328019816449,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Eskyoto",
+    "ID": 296350235045920769,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Kristine",
+    "ID": -1,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Nikotris",
+    "ID": 382571073289584640,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "TomRiddle78",
+    "ID": 251430944320389121,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Drowse",
+    "ID": 179579379402276865,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Testduck",
+    "ID": 174563116904873984,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Painbow",
+    "ID": -1,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "annimessi",
+    "ID": 353215586131509249,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "xAschente",
+    "ID": -1,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "NARDongPuyat",
+    "ID": -1,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Wallet",
+    "ID": 308537964160614400,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Svennies007",
+    "ID": 448577942008889365,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Eyela",
+    "ID": 614527108282056755,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Soru",
+    "ID": 181046692315922432,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Eurystoss",
+    "ID": 228663181063487488,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Garry",
+    "ID": 553929813321187348,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Hiws",
+    "ID": 147016209127178240,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "ManieQQ",
+    "ID": 310684464168828939,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Skwally",
+    "ID": 399652849736220672,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "CorruptMagic",
+    "ID": 336152754277974017,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "CripsyCone",
+    "ID": 168125164955893760,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "DrNecromancy",
+    "ID": 523888490384064513,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "HighestDPS",
+    "ID": 261047575740809218,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Kindling",
+    "ID": 277497292603260928,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Shaitek",
+    "ID": 264085666944647168,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "Xerr0",
+    "ID": 290951218149457920,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "pipari",
+    "ID": 148719283931840517,
+    "contribution": 0,
+    "eligible": false
+  },
+  {
+    "Name": "BlueAfLmao",
+    "ID": 431029234262081546,
+    "contribution": 405,
+    "eligible": true
+  }
+] 
+

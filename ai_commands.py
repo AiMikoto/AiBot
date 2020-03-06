@@ -3,6 +3,7 @@ from raid_scheduler import Scheduler
 import discord
 import asyncio
 import io
+import random
 
 async def help(context, potential_command):
     commands = aiu.read_json('commands.json')
@@ -98,3 +99,38 @@ async def post_poll(context, details):
                      icon_url = context.message.author.avatar_url)
     msg = await context.send(embed = embed)
     await aiu.add_reactions(msg, reactions)
+
+async def giveaway(context, details):
+    count = 0
+    if len(details) == 1:
+        if aiu.is_int(details[2]): count = int(details[2])
+    await context.message.delete()
+    guildies = aiu.read_json("guildies.json")
+    eligible = []
+    winners = []
+    for i in guildies:
+        if i["eligible"] and i["contribution"] >= 450: eligible.append(i)
+    print(len(eligible))
+    while(len(winners) < count):
+        s = 0
+        for i in eligible:
+            s += i["contribution"]
+        chosen = random.randint(0, s)
+        cs = 0
+        for i in eligible:
+            cs += i["contribution"]
+            if chosen < cs:
+               winners.append(i)
+               eligible.remove(i)
+               break
+    message = "Hey @everyone, this command is gonna redraw 2 people for our giveaway. Apologies for the previous bundle...\n" +\
+              "Either way, with that being said, congratulations to our winners:\n"
+    for i in winners:
+        if(i["ID"] != -1):
+            message += i["Name"] + " <@" + str(i["ID"]) + ">\n"
+        else: message += i["Name"] + "\n"
+    message += "\nDon't worry, if you didn't get a scroll this time, there's always next time. And your odds increase with the more people that get the scroll.\n"
+    message += "Thanks for helping with the guild either way, and, as always, remember to stay safe out there, Maplers! ♥"
+    await context.send(message)
+
+

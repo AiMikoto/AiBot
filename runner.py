@@ -30,6 +30,11 @@ class Runner:
         async def hello(context):
             await ai_cmd.hello(context) 
 
+        @self.client.command(aliases = ['give'])
+        @commands.has_any_role("Leadership","The guy in charge")
+        async def giveaway(context, details):
+            await ai_cmd.giveaway(context, details)
+
         #@self.client.command(aliases = ['cc'])
         #async def clear_channel(context, name = '', deletetype = '-n', limit = 100):
             #channel = a.find_channel(context, name)
